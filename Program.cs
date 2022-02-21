@@ -1,37 +1,29 @@
-﻿using System;
-
-namespace Basic_Program
+﻿// Finf number is prime or not
+using System;
+namespace Factors
 {
     class Program
     {
-
-
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            Console.WriteLine("Enter a number to find prime factors");
+            int value = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\nFactors");
 
-            int first;
-            int second;
-            int third;
+            for (int i = 1; i <= value; i++)
+            {
+                int remainder = value % i;
 
-            Console.WriteLine("Enter the first number : ");
-            first = int.Parse(Console.ReadLine());
+                if (remainder == 0)
+                {
+                    value = value / i;
+                    Console.WriteLine(i);
 
-            Console.WriteLine("Enter the second number : ");
-            second = int.Parse(Console.ReadLine());
+                    i = 1;
+                }
+            }
 
-            Console.WriteLine("Enter the third number : ");
-            third = int.Parse(Console.ReadLine());
 
-            int maxValue = Math.Max(Math.Max(first, second), third);
-
-            Console.WriteLine("Largest value : " + maxValue);
         }
     }
 }
-
-
-
-
-
-
-
