@@ -9,22 +9,29 @@ namespace Basic_Program
         static void Main(string[] args)
         {
 
-            Console.Write("Enter the value of N: ");
-            //VARIABLES
-            int N = Convert.ToInt32(Console.ReadLine());
-            int i = 1;
-            float nthHarmonicValue = 0;
+            int first;
+            int second;
+            int third;
 
-            while (i <= N)
-            {
-                Console.Write($"1/{i} + ");
-                nthHarmonicValue += 1 / (float)i;
-                i++;
-            }
-            Console.WriteLine($"\n{nthHarmonicValue}");
+            Console.WriteLine("Enter the first number : ");
+            first = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the second number : ");
+            second = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the third number : ");
+            third = int.Parse(Console.ReadLine());
+
+            int maxValue = Math.Max(Math.Max(first, second), third);
+
+            Console.WriteLine("Largest value : " + maxValue);
         }
-
     }
-
 }
+
+
+
+
+
+
 
