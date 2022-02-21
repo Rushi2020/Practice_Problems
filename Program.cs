@@ -1,29 +1,43 @@
-﻿// Finf number is prime or not
+﻿// See https://aka.ms/new-console-template for more information
 using System;
-namespace Factors
+namespace Flip_Coin
 {
-    class Program
+    class program
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter a number to find prime factors");
-            int value = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("\nFactors");
+            Console.WriteLine("Enter no of times flip the coin");
+            int number = Convert.ToInt32(Console.ReadLine());
+            double tail = 0;
+            double head = 0;
 
-            for (int i = 1; i <= value; i++)
+            for (int i = 0; i < number; i++)
             {
-                int remainder = value % i;
+                Random random = new Random();
+                double flip = Convert.ToDouble(random.Next(0, 1000)) / 1000;
 
-                if (remainder == 0)
+                if (flip < 0.5)
                 {
-                    value = value / i;
-                    Console.WriteLine(i);
-
-                    i = 1;
+                    //Console.WriteLine("Tail");
+                    tail++;
                 }
+                else
+                {
+                    // Console.WriteLine("Head");
+                    head++;
+                }
+
             }
 
+            double headPercentage = (head / number) * 100;
+            double tailPercentage = (tail / number) * 100;
+
+            Console.WriteLine($"Head {head} & Tail {tail}");
+            Console.WriteLine($"Head {headPercentage}% & Tail {tailPercentage}%");
 
         }
+
+
+
     }
 }
