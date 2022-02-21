@@ -1,15 +1,22 @@
-﻿using System;
-namespace CheckLeapYear
+﻿                  //Even or Odd Number
+using System;
+
+namespace Basic_Program
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter Year : ");
-            int Year = int.Parse(Console.ReadLine());
-            if (((Year % 4 == 0) && (Year % 100 != 0)) || (Year % 400 == 0))  
-                Console.WriteLine("{0} is a Leap Year.", Year);
-            else Console.WriteLine("{0} is not a Leap Year.", Year);
+            Console.WriteLine("Please enter any number :- ");
+            int Num = Convert.ToInt32(Console.ReadLine());
+            if (Num % 2 == 0)
+            {
+                Console.WriteLine("Enter number is even");
+            }
+            else
+            {
+                Console.WriteLine("Enter number is odd");
+            }
             Console.ReadLine();
         }
     }
